@@ -1,0 +1,9 @@
+Assignment 1:
+De facut API
+GET
+POST
+PUT
+DELETE
+1.11.1/api/users
+pentru GET si DELETE:1.11.1/api/users/id
+GET merge pe toti sau pe id

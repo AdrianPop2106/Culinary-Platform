@@ -1,0 +1,22 @@
+site de retete culinare:
+Utilizatori: basic user, admin, "bucatar"
+Utilizatorii se pot loga sau inregistra
+Inregistrarea consta din nume si prenume, email, parola, informatii card optionale.
+Bucatarul poate seta oricand daca accepta comenzi sau nu.
+Logarea consta din email si parola.
+Utilizatorii bucatari pot publica retete.
+Retetele constau din o descriere,o lista de ingrediente si ustensile, pasii de lucru si observatii.
+Utilizatorii pot viziona diferite retete postate de bucatari
+Utilizatorii pot da recenzie la retete
+Recenziile sunt date ca comentarii
+Se pot cauta retete dupa nume.
+La scrierea retetei se pot adauga ingrediente existente intr-o lista predefinita sau bucatarul poate adauga ingrediente proprii
+Utilizatorul basic poate sa comande produsul gata facut de la bucatarul ce o pus reteta.
+Comanda consta din specificarea cantitatii produsului, adresa de livrare, informatii card daca nu s-o facut la inceput
+Se pot vizualizeze profilele utilizatorilor bucatari/basic
+Bucatarul poate sa creeze meniuri pe care se gasesc mai multe produse facute de el
+Admin-ul poate adauga/sterge utilizatori, retete, ingrediente, comentarii etc.
+Utilizatorii pot salva retete pe propria pagina
+Se pot lasa comentarii la retete, chiar daca nu sunt recenzii
+
+Entitati: User, ingredient, reteta, ingrediente-reteta, comentarii, comanda
