@@ -3,11 +3,12 @@ package com.example.culinary.controller;
 import com.example.culinary.entity.Chef;
 import com.example.culinary.entity.User;
 import com.example.culinary.service.UserService;
-import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
 import javax.validation.Valid;
 import java.util.List;
-
+@CrossOrigin(origins="*",allowedHeaders = "*")
 @RestController
 public class UserController {
     @Autowired private UserService userService;
@@ -42,6 +43,12 @@ public class UserController {
         return userService.putUser(user,userId);
     }
 
+    @PostMapping("/login/")
+    public Integer login(@RequestBody User user)
+    {
+        return userService.login(user);
+    }
+
     @DeleteMapping("/users/{id}")
     public String deleteUserById(@PathVariable("id") int userId) {
         return userService.deleteUserById(userId);
@@ -63,5 +70,11 @@ public class UserController {
     @PutMapping("/putChef/{id}")
     public Chef putChef(@RequestBody Chef chef, @PathVariable("id") int userId) {
         return userService.putChef(chef,userId);
+    }
+
+    @GetMapping("/getChefByRecipeId/{id}")
+    public String getChefByRecipeId(@PathVariable("id") int recipeId)
+    {
+        return userService.getChefByRecipeId(recipeId);
     }
 }

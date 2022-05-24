@@ -1,35 +1,35 @@
 package com.example.culinary.entity;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Recipe {
     private int id;
     private int chefId;
     private String title;
     private String description;
-    private List<Ingredient> ing;
 
     Recipe(){}
     Recipe(int chefId,String title,String description){
         this.chefId=chefId;
         this.title=title;
         this.description=description;
-        ing=new ArrayList<Ingredient>();
+        //for(String i:ing.keySet()){
+            //this.ing.put(Integer.parseInt(i),Integer.parseInt(ing.get(i)));
+       // }
     }
 
-    Recipe(int id,int chefId,String title,String description){
+    public Recipe(int id, int chefId, String title, String description){
         this(chefId, title, description);
         this.id=id;
     }
 
-    public void addIngredient(Ingredient i){
-        ing.add(i);
-    }
+    /*public void addIngredient(int ingId,int quantity){
+        ing.put(ingId,quantity);
+    }*/
 
-    public void removeIngredient(Ingredient i){
-        ing.remove(i);
-    }
+    /*public void removeIngredient(int ingId){
+        ing.remove(ingId);
+    }*/
 
     public int getId() {
         return id;
@@ -62,4 +62,8 @@ public class Recipe {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    /*public Map<Integer,Integer> getIngredients() {
+        return ing;
+    }*/
 }

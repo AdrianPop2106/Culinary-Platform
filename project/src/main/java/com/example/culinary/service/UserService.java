@@ -14,6 +14,8 @@ public interface UserService {
 
     User getUserById(int id);
 
+    Integer login(User user);
+
     // Update operation
     User putUser(User user, int userId);
 
@@ -25,5 +27,7 @@ public interface UserService {
     List<Chef> getChefs();
 
     Chef putChef(Chef chef,int userId);
+
+    String getChefByRecipeId(int recipeId);
 
 }

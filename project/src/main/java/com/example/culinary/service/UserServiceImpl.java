@@ -61,6 +61,19 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public Integer login(User user) {
+        List<Map<String, Object>> result = jdbcTemplate.queryForList("call culinary.login(?,?);",user.getEmail(),user.getPass());
+        if(result.size()==0)
+            return -1;
+        for (Map row : result) {
+            String info;
+            info=row.get("id").toString();
+            return Integer.parseInt(info);
+        }
+        return null;
+    }
+
+    @Override
     public User putUser(User user, int userId) {
         String sql = "call culinary.putUser(?, ?, ?,?);";
         int result=jdbcTemplate.update(sql,userId,user.getUserName(),user.getEmail(),user.getPass());
@@ -118,5 +131,12 @@ public class UserServiceImpl implements UserService {
             chef.setId(userId);
         }
         return chef;
+    }
+
+    @Override
+    public String getChefByRecipeId(int recipeId) {
+        Map<String, Object> row = jdbcTemplate.queryForList("call culinary.getChefByRecipeId(?);",recipeId).get(0);
+
+        return row.get("username").toString();
     }
 }
